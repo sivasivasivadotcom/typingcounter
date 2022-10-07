@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+<!-- 	<link rel="icon" href="images/icon.png"> -->
+	<title>毎朝のタイピングカウンター</title>
+	<link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+	<div class="wrap">
+		<div class="top">
+			<h1>Typing Counter</h1>
+			<p>おはようございます！今日も一日頑張りましょう！</p>
+		</div><!-- .top -->
+
+		<div class="testarea">
+			<textarea id="typearea"></textarea>
+			<div id="resultArea" class="hidden">
+				<p>
+					今回の結果は…<br>
+					<span id="resultLength"></span>文字でした
+				</p>
+			</div>
+		</div><!-- .testarea -->
+
+		<div class="settingWrap">
+				<div class="setting">
+					<div>測定時間：　分</div>
+					<div>一行の文字数：　文字</div>
+					<div>
+						<span id="timeCounter">
+						</span>分経過
+					</div>
+				</div>
+				<div class="btnArea">
+					<div id="startBtn">START!</div>
+					<div id="stopBtn">STOP!</div>
+					<div id="restartBtn">RESTART!</div>
+					<div id="quitBtn">QUIT!</div>
+					<div id="retryBtn">RETRY!</div>
+				</div>
+		</div>
+	</div><!-- .wrap -->
+
+	<script src="js/main.js"></script>
+</body>
+</html>
