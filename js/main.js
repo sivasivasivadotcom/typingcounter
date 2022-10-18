@@ -10,15 +10,18 @@
 	const timeCounter = document.getElementById('timeCounter');
 	const resultLength = document.getElementById('resultLength');
 	const resultArea = document.getElementById('resultArea');
-
-	// 再代入するのでletで宣言のみ
+	const exampleArea = document.getElementById('exampleArea');
+	const exampleBtn = document.getElementById('exampleBtn');
+	
 	let time = 0;
+	let elapsedTime = 0;// stopされた時間を記録する。
+	// 再代入するのでletで宣言のみ
+	let typeareaCount;
 	let timeM;
 	let result;
 	let startTime;
 	let stoppedTime;
 	let timeoutId;
-	let elapsedTime = 0;// stopされた時間を記録する。
 
 	// リロード時のBtn状態
 	function beforeStart() {
@@ -27,7 +30,7 @@
 		restartBtn.classList.add('hidden');
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.add('hidden');
-		// typeareaをdisabledにしたい
+		typearea.readOnly = true;
 	}
 
 	// 入力時のBtn状態
@@ -37,6 +40,7 @@
 		restartBtn.classList.add('hidden');
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.add('hidden');
+		typearea.readOnly = false;
 	}
 
 	// 中断時のBtn状態
@@ -46,6 +50,7 @@
 		restartBtn.classList.remove('hidden');
 		quitBtn.classList.remove('hidden');
 		retryBtn.classList.add('hidden');
+		typearea.readOnly = true;
 	}
 
 	// 終了時のBtn状態
@@ -55,6 +60,7 @@
 		restartBtn.classList.add('hidden');
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.remove('hidden');
+		typearea.readOnly = true;
 	}
 
 	// 残り時間を表示する
@@ -69,13 +75,13 @@
 		fine();
 		clearTimeout(timeoutId);
 		resultArea.classList.remove('hidden');
-		resultLength.textContent = typearea.value.length;
+		typeareaCount = typearea.value.replace(/\n| |　/g, "");
+		resultLength.textContent = typeareaCount.length;
 	}
 
 	// timeを1sごとに増やす
 	function timeCount() {
-		if (time === 600) {
-			console.log('stop!');
+		if (time === 10) {// 後で600に戻す
 			textCount();
 			return;
 		}
@@ -113,6 +119,11 @@
 		timeCounter.textContent = '';
 		typearea.value = '';
 	}
+
+	// 入力例を押した時の挙動
+	function exampleHidden() {
+		exampleArea.classList.toggle('hidden');
+	}
 	
 	beforeStart();
 	startBtn.addEventListener('click', countSet);
@@ -120,4 +131,6 @@
 	restartBtn.addEventListener('click', countSet);
 	quitBtn.addEventListener('click', textCount);
 	retryBtn.addEventListener('click', retry);
+
+	exampleBtn.addEventListener('click', exampleHidden);
 }

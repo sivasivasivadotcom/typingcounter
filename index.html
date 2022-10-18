@@ -10,38 +10,60 @@
 </head>
 <body>
 	<div class="wrap">
-		<div class="top">
-			<h1>Typing Counter</h1>
-			<p>おはようございます！今日も一日頑張りましょう！</p>
-		</div><!-- .top -->
-
-		<div class="testarea">
-			<textarea id="typearea"></textarea>
-			<div id="resultArea" class="hidden">
-				<p>
-					今回の結果は…<br>
-					<span id="resultLength"></span>文字でした
-				</p>
-			</div>
-		</div><!-- .testarea -->
-
-		<div class="settingWrap">
-				<div class="setting">
-					<div>測定時間：　分</div>
-					<div>一行の文字数：　文字</div>
-					<div>
-						<span id="timeCounter">
-						</span>分経過
+		<div class="mainArea">
+			<div id="exampleBtn">入力例</div>
+			<div class="top">
+				<h1>Typing Counter</h1>
+				<p>おはようございます！今日も一日頑張りましょう！</p>
+			</div><!-- .top -->
+	
+			<div class="testarea">
+				<textarea id="typearea" readonly></textarea>
+				<div id="resultArea" class="hidden">
+					<p>
+						今回の結果は…<br>
+						<span id="resultLength"></span>文字でした
+					</p>
+				</div>
+			</div><!-- .testarea -->
+	
+			<div class="settingWrap">
+					<div class="setting">
+						<div>測定時間：　分</div>
+						<div>一行の文字数：　文字</div>
+						<div>
+							<span id="timeCounter">
+							</span>分経過
+						</div>
 					</div>
-				</div>
-				<div class="btnArea">
-					<div id="startBtn">START!</div>
-					<div id="stopBtn">STOP!</div>
-					<div id="restartBtn">RESTART!</div>
-					<div id="quitBtn">QUIT!</div>
-					<div id="retryBtn">RETRY!</div>
-				</div>
-		</div>
+					<div class="btnArea">
+						<div id="startBtn">START!</div>
+						<div id="stopBtn">STOP!</div>
+						<div id="restartBtn">RESTART!</div>
+						<div id="quitBtn">QUIT!</div>
+						<div id="retryBtn">RETRY!</div>
+					</div>
+			</div>
+		</div><!-- mainArea -->
+		
+		<div id="exampleArea" class="hidden">
+			<div class="exampleSentence">
+				<p class="sentenceTitle">吾輩は猫である</p>
+				<p class="sentenceContent">
+					吾輩は猫である。名前はまだ無い。
+				</p><!-- sentenceContent -->
+				<p class="sentenceContent">
+					どこで生まれたかとんと検討がつかぬ。なんでも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕まえて煮て食うという話である。しかしその当時は何という考もなかったから別段恐ろしいとも思わなかった。ただ彼の掌に乗せられてスーと持ち上げられた時なんだかフワフワした感じがあったばかりである。掌の上で少し落ち着いて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。その後猫にもだいぶ逢ったがこんな片輪には一度も出会わしたことがない。のみならず顔の真中があまりに突起している。そうしてその穴の中から時々ぷうぷうと煙を吹く。どうも咽せぽくて実に弱った。これが人間の飲む煙草というものである事はようやくこの頃知った。
+				</p><!-- sentenceContent -->
+				<p class="sentenceContent">
+					この書生の掌の裏でしばらくはよい心持に坐っておったが、しばらくすると非常な速力で運転し始めた。書生が動くのか自分だけが動くのか分らないが無暗に眼が廻る。胸が悪くなる。到底助からないと思っていると、どさりと音がして眼から火が出た。それまでは記憶しているがあとは何の事やら考え出そうとしても分らない。
+				</p><!-- sentenceContent -->
+				<p class="sentenceContent">
+					ふと気がついてみると書生はいない。たくさんおった兄弟が一匹も見えぬ。肝心の母親さえ姿を隠してしまった。その上今までの所とは違って無暗に明るい。目を明いていられぬくらいだ。はてな何でも様子がおかしいと、のそのそ這い出して見ると非常に痛い。吾輩は藁の上から急に笹原の中へ棄てられたのである。
+				</p><!-- sentenceContent -->
+			</div><!-- exampleSentence -->
+		</div><!-- exampleArea -->
+
 	</div><!-- .wrap -->
 
 	<script src="js/main.js"></script>

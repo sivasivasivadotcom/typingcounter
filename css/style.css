@@ -1,11 +1,24 @@
 @charset "utf-8";
 /* common */
+*  {
+	margin: 0;
+}
+
 .hidden {
 	display: none;
 }
 
 .wrap {
+	display: flex;
+	flex-direction: row-reverse;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.mainArea {
+	padding: 50px;
 	max-width: 700px;
+	width: 60%;
 	margin: 0 auto;
 	text-align: center;
 	color: #333;
@@ -108,4 +121,37 @@
 #retryBtn:active {
 	transform: translateY(5px);
 	box-shadow: none;
+}
+
+#exampleArea {
+	width: 40%;
+	border-right: #333 solid 1px;
+	padding: 20px;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+#exampleArea .hidden {
+	width: 0px;
+	border-right: none;
+}
+
+#exampleBtn {
+	position: fixed;
+	padding: 5px;
+	background-color: #333;
+	color: #fff;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.sentenceTitle {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.sentenceContent {
+	text-indent: 1em;
+	margin-bottom: 10px;
 }
