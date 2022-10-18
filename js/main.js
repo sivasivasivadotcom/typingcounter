@@ -81,7 +81,7 @@
 
 	// timeを1sごとに増やす
 	function timeCount() {
-		if (time === 10) {// 後で600に戻す
+		if (time === 600) {// 後で600に戻す
 			textCount();
 			return;
 		}
