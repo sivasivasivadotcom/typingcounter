@@ -2,6 +2,8 @@
 
 {
 	const typearea = document.getElementById('typearea');
+	const timeSetting = document.getElementById('timeSetting');
+	const timeSelected = document.getElementById('timeSelected');
 	const startBtn = document.getElementById('startBtn');
 	const stopBtn = document.getElementById('stopBtn');
 	const restartBtn = document.getElementById('restartBtn');
@@ -33,8 +35,9 @@
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.add('hidden');
 		typearea.readOnly = true;
+		timeSetting.disabled = false;
 	}
-
+	
 	// 入力時のBtn状態
 	function started() {
 		startBtn.classList.add('hidden');
@@ -43,8 +46,9 @@
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.add('hidden');
 		typearea.readOnly = false;
+		timeSetting.disabled = true;
 	}
-
+	
 	// 中断時のBtn状態
 	function stopped() {
 		startBtn.classList.add('hidden');
@@ -53,8 +57,9 @@
 		quitBtn.classList.remove('hidden');
 		retryBtn.classList.add('hidden');
 		typearea.readOnly = true;
+		timeSetting.disabled = true;
 	}
-
+	
 	// 終了時のBtn状態
 	function fine() {
 		startBtn.classList.add('hidden');
@@ -63,12 +68,18 @@
 		quitBtn.classList.add('hidden');
 		retryBtn.classList.remove('hidden');
 		typearea.readOnly = true;
+		timeSetting.disabled = true;
 	}
+
+	// 時間を設定する
+	timeSetting.addEventListener('input', () => {
+		timeSelected.textContent = timeSetting.value;
+	});
 
 	// 残り時間を表示する
 	function count() {
 		timeM = Math.floor(time / 60);
-		timeCounter.textContent = timeM;
+		timeCounter.textContent = timeSetting.value - timeM;
 		console.log(time);
 	}
 
@@ -85,7 +96,8 @@
 
 	// timeを1sごとに増やす
 	function timeCount() {
-		if (time === 600) {
+		// if (time === 600) {
+		if (time === 60 * timeSetting.value) {
 			textCount();
 			return;
 		}

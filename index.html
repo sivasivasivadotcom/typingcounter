@@ -30,10 +30,12 @@
 	
 			<div class="settingWrap">
 					<div class="setting">
-						<div>測定時間：　分</div>
 						<div>
-							<span id="timeCounter">
-							</span>分経過
+							測定時間：<span id="timeSelected">10</span>分
+							<input type="range" id="timeSetting" min="1" max="10" value="10">
+						</div>
+						<div>
+							残り時間<span id="timeCounter"></span>分
 						</div>
 					</div>
 					<div class="btnArea">
